@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# A hook script that is called after a successful
+# checkout is made.
+
+if [ $3 == 1 ]
+then
+    # This is a branch checkout
+    if [ $1 != $2 ]
+    then
+        REFS="Files changed"
+    else
+        REFS="No files changed"
+    fi
+    growlnotify -t "Checked out $(git branch | grep "*" | sed "s/* //")" -m "$REFS" -I "~/Dropbox/git/git_icon_mac.txt"
+else
+    # This is a file checkout
+    growlnotify -t "Checked out file" -m "$REFS" -I "~/Dropbox/git/git_icon_mac.txt"
+fi
+#echo $(git rev-parse --symbolic-full-name --abbrev-ref @{u});
