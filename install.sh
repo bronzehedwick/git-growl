@@ -3,7 +3,7 @@
 # @author Chris DeLuca (bronzehedwick)
 
 TARGET=${PWD##}
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+GIT_GROWL_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 UNAME=$( uname )
 
 # Determine operating system
@@ -16,10 +16,10 @@ then
 else
     OS='unknown'
     echo "You're on an OS that's too exotic for this script! Please install something else and try again."
-    exit 666
+    exit 0
 fi
 
-FILES=$OS"/*"
+FILES=$GIT_GROWL_DIR/$OS/*
 
 # Install function
 setup ()
