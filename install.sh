@@ -4,25 +4,30 @@
 
 TARGET=${PWD##}
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+UNAME=$( uname )
 
 # Determine operating system
-if ($(uname) == "Darwin")
+if [ "$UNAME" == 'Darwin' ]
 then
-    FILES="osx/*"
+    OS="osx"
+elif [ "$UNAME" == 'Linux' ]
+then
+    OS="linux"
 else
-    FILES="linux/*"
+    OS='unknown'
+    echo "You're on an OS that's too exotic for this script! Please install something else and try again."
+    exit 666
 fi
+
+FILES=$OS"/*"
 
 # Install function
 setup ()
 {
     for f in $FILES
     do
-      if [ -f $f ]
-      then
-        echo "Linking $DIR/$f to $TARGET/$f"
-        ln -s $DIR/$f $TARGET/$f
-      fi
+        echo "Linking $DIR/"$f" to $TARGET"
+        ln -s $DIR/"$f" $TARGET
     done
     echo "Done"
     exit 0

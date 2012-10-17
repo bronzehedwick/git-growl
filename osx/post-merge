@@ -6,4 +6,4 @@
 # To enable this hook, rename this file to "post-merge".
 
 growlnotify -t "Merge Successful" -m "On branch $(git branch | grep "*" | sed "s/* //")" -I "~/Dropbox/git/git_icon_mac.txt"
-echo $@
+
