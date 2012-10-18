@@ -15,6 +15,6 @@ then
     notify-send "Checked out $(git branch | grep "*" | sed "s/* //")" "$REFS" -i ../images/git_icon.png
 else
     # This is a file checkout
-    growlnotify -t "Checked out file" -m "$REFS" -I "~/Dropbox/git/git_icon_mac.txt"
+    notify-send "Checked out file" "$REFS" -i ../images/git_icon.png
 fi
 #echo $(git rev-parse --symbolic-full-name --abbrev-ref @{u});
