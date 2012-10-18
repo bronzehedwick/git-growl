@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # This hook shows a message after a successful pull
 
