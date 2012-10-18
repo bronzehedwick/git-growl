@@ -1,8 +1,5 @@
 #!/bin/sh
 #
-# An example hook script to prepare a packed repository for use over
-# dumb transports.
+# This hook shows a message after a successful pull
 
-growlnotify -t "Pull Successful" -m "On branch $(git branch | grep "*")" -I "~/Dropbox/git/git_icon_mac.txt"
-echo $@
-
+notify-send "Pull Successful" "On branch $(git branch | grep "*")" -i ../images/git_icon.png

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# A hook script that is called after a successful
+# This hook shows a message when a successful
 # checkout is made.
 
 if [ $3 == 1 ]
@@ -12,7 +12,7 @@ then
     else
         REFS="No files changed"
     fi
-    growlnotify -t "Checked out $(git branch | grep "*" | sed "s/* //")" -m "$REFS" -I "~/Dropbox/git/git_icon_mac.txt"
+    notify-send "Checked out $(git branch | grep "*" | sed "s/* //")" "$REFS" -i ../images/git_icon.png
 else
     # This is a file checkout
     growlnotify -t "Checked out file" -m "$REFS" -I "~/Dropbox/git/git_icon_mac.txt"
