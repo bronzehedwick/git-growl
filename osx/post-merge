@@ -2,8 +2,6 @@
 #
 # An example hook script that is called after a successful
 # merge is made.
-#
-# To enable this hook, rename this file to "post-merge".
 
 growlnotify -t "Merge Successful" -m "On branch $(git branch | grep "*" | sed "s/* //")" -n "git-growl" --image ~/.git-growl/images/git_icon.png
 
