@@ -3,6 +3,5 @@
 # An example hook script to prepare a packed repository for use over
 # dumb transports.
 
-growlnotify -t "Pull Successful" -m "On branch $(git branch | grep "*")" -I "~/Dropbox/git/git_icon_mac.txt"
-echo $@
+growlnotify -t "Pull Successful" -m "On branch $(git branch | grep "*")" -n "git-growl" --image ~/.git-growl/images/git_icon_mac.txt
 

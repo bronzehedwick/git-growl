@@ -5,5 +5,5 @@
 #
 # To enable this hook, rename this file to "post-commit".
 
-growlnotify -t "Commit Successful" -m "$(git log -1 --pretty=format:"%s")" -I "~/Dropbox/git/git_icon_mac.txt"
-echo $@
+growlnotify -t "Commit Successful" -m "$(git log -1 --pretty=format:"%s")" -n "git-growl" --image ~/.git-growl/images/git_icon.png
+
