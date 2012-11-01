@@ -3,8 +3,6 @@
 # This hook shows a message when a successful
 # checkout is made.
 
-GIT_GROWL_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
 if [ $3 == 1 ]
 then
     # This is a branch checkout
@@ -14,10 +12,9 @@ then
     else
         REFS="No files changed"
     fi
-    notify-send "Checked out $(git branch | grep "*" | sed "s/* //")" "$REFS" -i $GIT_GROWL_DIR/images/git_icon.png
+    notify-send "Checked out $(git branch | grep "*" | sed "s/* //")" "$REFS" -i ~/.git-growl/images/git_icon.png
 else
     # This is a file checkout
-    notify-send "Checked out file" "$REFS" -i $GIT_GROWL_DIR/images/git_icon.png
+    notify-send "Checked out file" "$REFS" -i ~/.git-growl/images/git_icon.png
 fi
-#echo $(git rev-parse --symbolic-full-name --abbrev-ref @{u});
 

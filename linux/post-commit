@@ -1,9 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 #
-# An example hook script that is called after a successful
-# commit is made.
-#
-# To enable this hook, rename this file to "post-commit".
+# This hook displays a growl notification with commit information
 
-notify-send "Commit Successful" "$(git log -1 --pretty=format:"%s")" -i ~/Dropbox/git/git_icon.png
+notify-send "Commit on $(git branch | grep "*" | sed "s/* //")" "$(git log -1 --pretty=format:"%s")" -i ~/.git-growl/images/git_icon.png
 
