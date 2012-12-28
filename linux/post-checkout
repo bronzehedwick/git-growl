@@ -15,6 +15,6 @@ then
     notify-send "Checked out $(git branch | grep "*" | sed "s/* //")" "$REFS" -i ~/.git-growl/images/git_icon.png
 else
     # This is a file checkout
-    notify-send "Checked out file" "$REFS" -i ~/.git-growl/images/git_icon.png
+    notify-send "Checked out file" "$(git diff --name-only HEAD@{1} HEAD)" -i ~/.git-growl/images/git_icon.png
 fi
 

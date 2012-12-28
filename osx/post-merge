@@ -3,5 +3,5 @@
 # This hook displays a message when a successful
 # merge is made.
 
-growlnotify -t "Merge on $(git branch | grep "*" | sed "s/* //")" -m "$(git diff --stat HEAD~1 HEAD | awk END{print})" -n "git-growl" --image ~/.git-growl/images/git_icon.png
+growlnotify -t "Merge on $(git branch | grep "*" | sed "s/* //")" -m "$(git diff --stat HEAD@{1} HEAD@{0} | awk END{print})" -n "git-growl" --image ~/.git-growl/images/git_icon.png
 

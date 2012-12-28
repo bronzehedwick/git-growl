@@ -3,5 +3,5 @@
 # This hook displays a message when a successful
 # merge is made.
 
-notify-send "Merge on $(git branch | grep "*" | sed "s/* //")" "$(git diff --stat HEAD~1 HEAD | awk END{print})" -i ~/.git-growl/images/git_icon.png
+notify-send "Merge on $(git branch | grep "*" | sed "s/* //")" "$(git diff --stat HEAD@{1} HEAD@{0} | awk END{print})" -i ~/.git-growl/images/git_icon.png
 

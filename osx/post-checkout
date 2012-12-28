@@ -15,6 +15,6 @@ then
     growlnotify -t "Checked out $(git branch | grep "*" | sed "s/* //")" -m "$REFS" -n "git-growl" --image ~/.git-growl/images/git_icon.png
 else
     # This is a file checkout
-    growlnotify -t "Checked out file" -m "$REFS" -n "git-growl" --image ~/.git-growl/images/git_icon.png
+    growlnotify -t "Checked out file" -m "$(git diff --name-only HEAD@{1} HEAD)" -n "git-growl" --image ~/.git-growl/images/git_icon.png
 fi
 #echo $(git rev-parse --symbolic-full-name --abbrev-ref @{u});
