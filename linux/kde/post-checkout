@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# This hook shows a message when a successful
+# checkout is made.
+
+if [[ $3 == 1 ]] ; then
+    # This is a branch checkout
+    if [[ $1 != $2 ]] ; then
+        REFS="Files changed"
+    else
+        REFS="No files changed"
+    fi
+    kdialog --passivepopup "$REFS" 5 --title "Checked out $(git branch | grep "*" | sed "s/* //")" --icon ~/.git-growl/images/git_icon.png --name "git-growl"
+else
+    # This is a file checkout
+    kdialog --passivepopup $(git diff --name-only HEAD@{1} HEAD) 5 --title "Checked out file" --icon ~/.git-growl/images/git_icon.png --name "git-growl"
+fi
+

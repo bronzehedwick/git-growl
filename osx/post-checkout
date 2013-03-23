@@ -3,10 +3,10 @@
 # A hook script that is called after a successful
 # checkout is made.
 
-if [ $3 == 1 ]
+if [[ $3 == 1 ]]
 then
     # This is a branch checkout
-    if [ $1 != $2 ]
+    if [[ $1 != $2 ]]
     then
         REFS="Files changed"
     else

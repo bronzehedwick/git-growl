@@ -1,0 +1,6 @@
+#!/bin/sh
+#
+# This hook displays a growl notification with commit information
+
+kdialog --passivepopup "$(git log -1 --pretty=format:"%s")" 5 --title "Commit on $(git branch | grep "*" | sed "s/* //")" --icon ~/.git-growl/images/git_icon.png --name "git-growl"
+
