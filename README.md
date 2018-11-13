@@ -5,7 +5,7 @@ Git hooks that provide local growl notifications
 
 A project with admittedly limited practical uses, it does provide pretty, if largely redundant, git notifications. See the TODO section for when it could actually be useful.
 
-![Git-growl screenshot](http://hypnotictoast.com/images/git_growl_screenshot.png)
+<!-- ![Git-growl screenshot](http://hypnotictoast.com/images/git_growl_screenshot.png) -->
 
 Requirements
 ------------
